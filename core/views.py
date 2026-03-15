@@ -328,6 +328,7 @@ class RejectUserView(views.APIView):
             return Response({'message': 'Resmiyet iptal edildi.'})
         except User.DoesNotExist:
             return Response({'error': 'Kullanıcı bulunamadı.'}, status=status.HTTP_404_NOT_FOUND)
+
 class GlobalSearchView(views.APIView):
     def get(self, request):
         query = request.query_params.get('q', '')
